@@ -1,2 +1,6 @@
 npm i express --save
 npm i body-parser --save
+
+Comando para iniciar mongo db
+
+"C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe" --dbpath="c:\data\db"

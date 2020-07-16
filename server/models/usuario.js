@@ -11,7 +11,7 @@ let usuarioSchema = new Schema({
         type: String,
         required: [true, 'El email es necesario']
     },
-    passwors: {
+    password: {
         type: String,
         required: [true, 'La contraseña es necesaria']
     },
@@ -20,6 +20,7 @@ let usuarioSchema = new Schema({
         required: false
     },
     role: {
+        type: String,
         default: 'USER_ROLE'
     },
     estado: {

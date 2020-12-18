@@ -4,3 +4,7 @@ npm i body-parser --save
 Comando para iniciar mongo db
 
 "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath="c:\data\db"
+
+npm install mongoose-unique-validator --save
+
+npm install bcrypt@3.0.2 --save

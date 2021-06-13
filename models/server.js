@@ -1,12 +1,15 @@
 const express = require('express');
 const cors = require('cors');
 const { dbConnection } = require('../database/config');
+const { sequelizeDbConnection } = require('../database/config-sequelize');
+const { mysqlDbConnection } = require('../database/config-mysql');
 
 class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
-        this.usuariosRoute = '/api/usuarios';
+        this.customersSequelizeRoute = '/api/sequelize/customers';
+        this.customersMysqlRoute = '/api/mysql/customers';
 
         // CONEXION A LA BASE DE DATOS 
         this.conectarDB();
@@ -20,6 +23,8 @@ class Server {
 
     async conectarDB() {
         await dbConnection();
+        await mysqlDbConnection;
+        await sequelizeDbConnection;
     }
 
     middlewares() {
@@ -35,7 +40,8 @@ class Server {
     }
 
     routes() {
-        this.app.use(this.usuariosRoute, require('../routes/usuariosRoute'))
+        this.app.use(this.customersSequelizeRoute, require('../routes/customersSequelizeRoute'))
+        this.app.use(this.customersMysqlRoute, require('../routes/customersMysqlRoute'))
     }
 
     listen() {

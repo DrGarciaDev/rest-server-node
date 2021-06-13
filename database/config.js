@@ -9,7 +9,7 @@ const dbConnection = async() => {
             useFindAndModify: false
         });
 
-        console.log('Base de datos online');
+        console.log('Base de datos MONGO DB online');
     } catch (error) {
         console.log(error);
         throw new Error('Falló la conexión con la base de datos');
